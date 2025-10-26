@@ -3,7 +3,7 @@ description: Suggest an idea for improvement.
 title: "[Feature Request]: "
 labels: [ "request-new-feature", "triage" ]
 assignees:
-  - Jonghakseo
+  - OthmanAdi
 
 body:
   - type: textarea
