@@ -234,6 +234,22 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 ---
 
-**Made with ❤️ for developers who live in documentation**
+## 👨‍💻 About the Author
 
-Created by [Othman Adi](https://othmanadi.com) • [GitHub](https://github.com/OthmanAdi)
+**Ahmad Othman Ammar Adi** (Othman Adi)
+
+Full Stack Developer, AI Agents Orchestrator, and passionate educator from Hama, Syria — now based in Berlin, Germany.
+
+- 🎓 **Education**: Completed apprenticeship in Computer Science
+- 👨‍🏫 **Teaching**: 8,000+ documented teaching lectures since 2020
+- 📚 **Formats**: Workshops (days to weeks), intensive courses (2-6 months), and long-term programs including multi-year weekend coding classes for kids
+- 💼 **Current Role**: AI Agents Orchestrator at migRaven
+
+**Connect:**
+- 🌐 Website: [othmanadi.com](https://othmanadi.com)
+- 💼 LinkedIn: [codingwithadi](https://linkedin.com/in/codingwithadi)
+- 🐙 GitHub: [OthmanAdi](https://github.com/OthmanAdi)
+
+---
+
+**Made with ❤️ for developers who live in documentation**

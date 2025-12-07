@@ -5,10 +5,30 @@
   "license": "MIT",
   "private": false,
   "sideEffects": false,
+  "author": {
+    "name": "Ahmad Othman Ammar Adi",
+    "url": "https://othmanadi.com"
+  },
+  "homepage": "https://othmanadi.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/OthmanAdi/ai-docs-copier.git"
   },
+  "bugs": {
+    "url": "https://github.com/OthmanAdi/ai-docs-copier/issues"
+  },
+  "keywords": [
+    "browser-extension",
+    "chrome-extension",
+    "documentation",
+    "ai",
+    "llm",
+    "chatgpt",
+    "claude",
+    "markdown",
+    "llms-txt",
+    "developer-tools"
+  ],
   "type": "module",
   "scripts": {
     "clean:bundle": "rimraf dist && turbo clean:bundle",
