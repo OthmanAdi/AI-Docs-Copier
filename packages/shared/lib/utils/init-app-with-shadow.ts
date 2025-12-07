@@ -20,7 +20,7 @@ export const initAppWithShadow = ({ id, app, inlineCss }: { id: string; inlineCs
      * Injecting styles into the document, this may cause style conflicts with the host page
      */
     const styleElement = document.createElement('style');
-    styleElement.innerHTML = inlineCss;
+    styleElement.textContent = inlineCss;
     shadowRoot.appendChild(styleElement);
   } else {
     /** Inject styles into shadow dom */

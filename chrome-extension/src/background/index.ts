@@ -3,6 +3,44 @@ import { initializeTrial, hasAccess } from '@extension/shared/lib/subscription';
 
 console.log('AI Docs Copier - Background loaded');
 
+/**
+ * Allowed domains for URL opening (security whitelist)
+ */
+const ALLOWED_DOMAINS = [
+  'chatgpt.com',
+  'chat.openai.com',
+  'claude.ai',
+  'github.com',
+  'extensionpay.com',
+];
+
+/**
+ * Validate URL before opening to prevent URL injection attacks
+ * Only allows HTTPS URLs from trusted domains
+ */
+function isValidUrl(url: string): boolean {
+  if (!url || typeof url !== 'string') {
+    return false;
+  }
+
+  try {
+    const parsed = new URL(url);
+
+    // Only allow HTTPS protocol
+    if (parsed.protocol !== 'https:') {
+      return false;
+    }
+
+    // Check if domain is in allowlist
+    const hostname = parsed.hostname.toLowerCase();
+    return ALLOWED_DOMAINS.some(domain =>
+      hostname === domain || hostname.endsWith('.' + domain)
+    );
+  } catch {
+    return false;
+  }
+}
+
 // Initialize trial on install
 chrome.runtime.onInstalled.addListener(details => {
   if (details.reason === 'install') {
@@ -136,8 +174,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           break;
 
         case 'open-url':
-          chrome.tabs.create({ url: request.url });
-          sendResponse({ success: true });
+          // Validate URL before opening to prevent URL injection
+          if (isValidUrl(request.url)) {
+            chrome.tabs.create({ url: request.url });
+            sendResponse({ success: true });
+          } else {
+            console.warn('Blocked attempt to open invalid URL:', request.url);
+            sendResponse({ error: 'Invalid URL' });
+          }
           break;
 
         default:
